@@ -63,7 +63,7 @@ module lifo #( parameter
   output logic [DATA_W-1:0] r_data,
 
   // helper ports
-  output logic [DEPTH_W-1:0] cnt = '0,
+  output logic [$clog2(DEPTH+1)-1:0] cnt = '0,
   output logic empty,
   output logic full,
 

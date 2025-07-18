@@ -32,7 +32,7 @@ module freq_meter (
   input test_clk,             // signal to count
   input test_ena,             // enable counting signal (in test_clk domain)
 
-  output [31:0] readout = '0  // number of test_clk complete cycles per
+  output reg [31:0] readout = '0  // number of test_clk complete cycles per
 );                            // 1073741,824 mks time base
 
 
@@ -65,7 +65,7 @@ module freq_meter (
 
   edge_detect start_new_count_ed (
     .clk( test_clk ),
-    .nrst( 1'b1 ),
+    .anrst( 1'b1 ),
     .in( start_new_count ),
     .rising( start_new_count_rise ),
     .falling(  ),

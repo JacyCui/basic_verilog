@@ -56,7 +56,7 @@ module fifo_single_clock_reg_v2 #( parameter
 
   FWFT_MODE = "TRUE",             // "TRUE"  - first word fall-trrough" mode
                                   // "FALSE" - normal fifo mode
-  DEPTH = 8,                      // max elements count == DEPTH, DEPTH MUST be power of 2
+  DEPTH = 32,                      // max elements count == DEPTH, DEPTH MUST be power of 2
   DEPTH_W = clogb2(DEPTH)+1,      // elements counter width, extra bit to store
                                   // "fifo full" state, see cnt[] variable comments
 
@@ -96,7 +96,7 @@ module fifo_single_clock_reg_v2 #( parameter
   // fofo initialization
   // Modelsim gives suppressable error here
   // "(vlog-7061) Variable 'data' driven in an always_ff block, may not be driven by any other process"
-  generate
+/*  generate
     initial begin
       if( USE_INIT_FILE ) begin
         `include "fifo_single_clock_reg_v2_init.svh"
@@ -110,7 +110,7 @@ module fifo_single_clock_reg_v2 #( parameter
         cnt[DEPTH_W-1:0] <= '0;
       end
     end // initial
-  endgenerate
+  endgenerate */
 
 
   // data output buffer for normal fifo mode

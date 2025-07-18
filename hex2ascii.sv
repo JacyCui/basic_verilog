@@ -22,7 +22,7 @@ hex2ascii HA (
 
 module hex2ascii (
   input [3:0] hex,
-  output [7:0] ascii
+  output reg [7:0] ascii
 );
 
   always_comb begin

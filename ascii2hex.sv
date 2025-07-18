@@ -22,10 +22,10 @@ ascii2hex AH (
 
 module ascii2hex (
   input  [7:0] ascii,
-  output [3:0] hex
+  output reg [3:0] hex
 );
 
-  always_comb begin
+  always_comb
     case( ascii[7:0] )
       8'd48        : hex[3:0] = 4'h0;
       8'd49        : hex[3:0] = 4'h1;

@@ -102,7 +102,7 @@ logic spi_clk_rise;
 logic spi_clk_fall;
 edge_detect ed_spi_clk (
   .clk( clk ),
-  .nrst( nrst ),
+  .anrst( nrst ),
   .in( spi_clk ),
   .rising( spi_clk_rise ),
   .falling( spi_clk_fall ),
@@ -113,7 +113,7 @@ logic spi_wr_cmd_rise;
 logic spi_rd_cmd_rise;
 edge_detect ed_cmds [1:0] (
   .clk( {2{clk}} ),
-  .nrst( {2{nrst}} ),
+  .anrst( {2{nrst}} ),
   .in( {spi_wr_cmd,spi_rd_cmd} ),
   .rising( {spi_wr_cmd_rise,spi_rd_cmd_rise} ),
   .falling(  ),
