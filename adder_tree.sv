@@ -40,7 +40,7 @@ module adder_tree #(
 );
 
 
-logic [STAGES_NUM:0][INPUTS_NUM_INT-1:0][ODATA_WIDTH-1:0] data;
+logic [ODATA_WIDTH-1:0] data[STAGES_NUM:0][INPUTS_NUM_INT-1:0];
 
 // generating tree
 genvar stage, adder;
